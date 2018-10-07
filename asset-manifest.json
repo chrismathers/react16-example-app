@@ -1,14 +1,14 @@
 {
-  "main.css": "/chrismathers/react16-example-app.git/static/css/main.971df317.chunk.css",
-  "main.js": "/chrismathers/react16-example-app.git/static/js/main.cac82316.chunk.js",
-  "main.js.map": "/chrismathers/react16-example-app.git/static/js/main.cac82316.chunk.js.map",
-  "static/js/1.4192797b.chunk.js": "/chrismathers/react16-example-app.git/static/js/1.4192797b.chunk.js",
-  "static/js/1.4192797b.chunk.js.map": "/chrismathers/react16-example-app.git/static/js/1.4192797b.chunk.js.map",
-  "runtime~main.js": "/chrismathers/react16-example-app.git/static/js/runtime~main.8f7a9472.js",
-  "runtime~main.js.map": "/chrismathers/react16-example-app.git/static/js/runtime~main.8f7a9472.js.map",
-  "static/media/logo.svg": "/chrismathers/react16-example-app.git/static/media/logo.5d5d9eef.svg",
-  "static/css/main.971df317.chunk.css.map": "/chrismathers/react16-example-app.git/static/css/main.971df317.chunk.css.map",
-  "index.html": "/chrismathers/react16-example-app.git/index.html",
-  "precache-manifest.e8c54ba6c950c23f315fdc8df7936053.js": "/chrismathers/react16-example-app.git/precache-manifest.e8c54ba6c950c23f315fdc8df7936053.js",
-  "service-worker.js": "/chrismathers/react16-example-app.git/service-worker.js"
+  "main.css": "/react16-example-app.git/static/css/main.971df317.chunk.css",
+  "main.js": "/react16-example-app.git/static/js/main.ed56b004.chunk.js",
+  "main.js.map": "/react16-example-app.git/static/js/main.ed56b004.chunk.js.map",
+  "static/js/1.c411ec9d.chunk.js": "/react16-example-app.git/static/js/1.c411ec9d.chunk.js",
+  "static/js/1.c411ec9d.chunk.js.map": "/react16-example-app.git/static/js/1.c411ec9d.chunk.js.map",
+  "runtime~main.js": "/react16-example-app.git/static/js/runtime~main.f21e7017.js",
+  "runtime~main.js.map": "/react16-example-app.git/static/js/runtime~main.f21e7017.js.map",
+  "static/media/logo.svg": "/react16-example-app.git/static/media/logo.5d5d9eef.svg",
+  "static/css/main.971df317.chunk.css.map": "/react16-example-app.git/static/css/main.971df317.chunk.css.map",
+  "index.html": "/react16-example-app.git/index.html",
+  "precache-manifest.914cab2472fd9cf191b0e61a51eff1bc.js": "/react16-example-app.git/precache-manifest.914cab2472fd9cf191b0e61a51eff1bc.js",
+  "service-worker.js": "/react16-example-app.git/service-worker.js"
 }
