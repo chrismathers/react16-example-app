@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "C-3P0", "description": "C-3PO is a droid programmed for etiquette and protocol, built by the heroic Jedi Anakin Skywalker, and a constant companion to astromech R2-D2." },
+  { "id": 2, "name": "Darth Vader", "description": "Discovered as a slave on Tatooine by Qui-Gon Jinn and Obi-Wan Kenobi, Anakin Skywalker had the potential to become one of the most powerful Jedi ever." },
+  { "id": 3, "name": "BB-8", "description": "A skittish but loyal astromech, BB-8 accompanied Poe Dameron on many missions for the Resistance, helping keep his X-wing in working order." },
+  { "id": 4, "name": "Boba Fett", "description": "With his customized Mandalorian armor, deadly weaponry, and silent demeanor, Boba Fett was one of the most feared bounty hunters in the galaxy." }
+]
