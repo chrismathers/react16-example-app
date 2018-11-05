@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import StarWarsPage from "./pages/StarWarsPage";
+import PeanutsPage from "./pages/PeanutsPage";
 import './App.css';
 
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
@@ -57,110 +59,18 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const SCTabContent = styled.div`
-    background-color: transparent;
-    margin: 0 auto;
-`
-
-const SCTitle = styled.h4`
-    line-height: 2em;
-    margin: 0 0 2em 0;
-    display: inline-block;
-    color: ${ props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor };
-`
-
 class App extends Component {
-    // not totally required for this class
-    static propTypes = {
-        currentTab: PropTypes.number,
-        width: PropTypes.number,
-        goMobile: PropTypes.bool,
-        tabText: PropTypes.string,
-        characters: PropTypes.array
-    }
-
-    static defaultProps = {
-        currentTab: 1,
-        width: window.innerWidth,
-        goMobile: false,
-        tabText: '',
-        characters: []
-    }
-
-    state = {
-        currentTab: this.props.currentTab || 1
-    }
-
-    componentDidMount () {
-        axios.get('data.json')
-            .then(res => {
-                this.setState({
-                    characters: res.data
-                })
-            })
-            .catch(function (error) {
-                console.log("The Axios call returned this error: " + error)
-            })
-    }
-
-    changeTab = tab => {
-        this.setState({ currentTab: tab.id })
-    }
-
     render () {
-
-        const items = this.state.characters;
-
         return (
             <ThemeProvider theme={theme}>
-                <React.Fragment>
-                    <GlobalStyle/>
-                    <div className='c_tabsSwitcher'>
-                        <Tabs
-                            currentTab={this.state.currentTab}
-                            changeTab={this.changeTab}
-                            data={items}
-                        />
-                        <SCTabContent>
-                            {!this.state.goMobile
-                                ? <Characters
-                                    data={items}
-                                    currentTab={this.state.currentTab}
-                                />
-                                : <span>
-                                    <IconC3po />
-                                    <IconVader />
-                                    <IconBb8 />
-                                    <IconFett />
-                                </span>}
-                        </SCTabContent>
-
-                        <SCTitle>Default Theme</SCTitle>
-
-                        <Tabs
-                            currentTab={this.state.currentTab}
-                            changeTab={this.changeTab}
-                            data={items}
-                            dark
-                        />
-                        <SCTabContent>
-                            {!this.state.goMobile
-                                ? <Characters
-                                    dark
-                                    data={items}
-                                    currentTab={this.state.currentTab}
-                                />
-                                : <span>
-                                    <IconC3po />
-                                    <IconVader />
-                                    <IconBb8 />
-                                    <IconFett />
-                                </span>}
-                        </SCTabContent>
-
-                        <SCTitle dark>Dark Theme</SCTitle>
-                    </div>
-                </React.Fragment>
+                <Router>
+                    <React.Fragment>
+                        <GlobalStyle/>
+                        <Route exact path="/" component={StarWarsPage} />
+                        <Route exact path="/starwars" component={StarWarsPage} />
+                        <Route path="/peanuts" component={PeanutsPage} />
+                    </React.Fragment>
+                </Router>
             </ThemeProvider>
         )
     }

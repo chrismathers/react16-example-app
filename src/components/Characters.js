@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from "styled-components"
 import theme from "../theme.js"
+import axios from 'axios'
 
 import IconC3po from './Icons/IconC3po.js';
 import IconVader from './Icons/IconVader.js';
@@ -34,23 +35,48 @@ const SCTitle = styled.h3`
 `
 
 class Characters extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // you must initilize info to null so the current condition will work
+            starwars: null,
+            peanuts: null,
+            characters: null
+        }
+    }
+
     // not totally required for this class
     static propTypes = {
-        data: PropTypes.array
-    }
+        starwars: PropTypes.array,
+        peanuts: PropTypes.array,
+        characters: PropTypes.array
+    };
 
     static defaultProps = {
-        data: []
-    }
-
-    state = {
-        data: this.props.data || []
-    }
+        starwarspage: '',
+        peanutspage: ''
+    };
+/*
+    componentDidMount () {
+        axios.get('data.json')
+            .then(res => {
+                this.setState({
+                    characters: res.data.starwars.characters
+                })
+            })
+            .catch(function (error) {
+                console.log("The Axios call returned this error: " + error)
+            })
+    }*/
 
    render () {
 
+        const {...props} = this.props;
         let current = this.props.currentTab;
         let themeColor = this.props.dark;
+
+        const page = props.page;
+        console.log("character page ", page);
 
         const characterIcon = (id) => ({
            "1": <IconC3po />,
@@ -59,7 +85,7 @@ class Characters extends React.Component {
            "4": <IconFett />
         })[id]
 
-        const characterDetails = this.props.data.map(function (character) {
+        const characterDetails = page.map(function (character) {
              if (character.id === current) {
                 return (
                     <SCPanel
@@ -74,13 +100,12 @@ class Characters extends React.Component {
                     </SCPanel>
                 )
             }
-        })
-
+        });
 
         return (
             <ThemeProvider theme={theme}>
                 <React.Fragment>
-                    {characterDetails}
+                   {characterDetails}
                 </React.Fragment>
             </ThemeProvider>
         )
