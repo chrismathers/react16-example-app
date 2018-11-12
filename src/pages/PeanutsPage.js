@@ -12,16 +12,16 @@ import axios from "axios";
 const SCTabContent = styled.div`
     background-color: transparent;
     margin: 0 auto;
-`
+`;
 
 const SCTitle = styled.h4`
     line-height: 2em;
     margin: 0 0 2em 0;
     display: inline-block;
-    color: ${ props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor };
-`
+    color: ${props => props.theme.colors.panelColor};
+`;
 
-export default class StarWarsPage extends Component {
+export default class PeanutsPage extends Component {
     // not totally required for this class
     static propTypes = {
         currentTab: PropTypes.number,
@@ -29,7 +29,7 @@ export default class StarWarsPage extends Component {
         goMobile: PropTypes.bool,
         tabText: PropTypes.string,
         data: PropTypes.array
-    }
+    };
 
     static defaultProps = {
         currentTab: 1,
@@ -37,13 +37,13 @@ export default class StarWarsPage extends Component {
         goMobile: false,
         tabText: '',
         data: []
-    }
+    };
 
     state = {
         currentTab: this.props.currentTab || 1,
-        selectedTheme: "light",
+        //selectedTheme: "light",
         data: this.props.data
-    }
+    };
 
     componentDidMount () {
         axios.get('data.json')
@@ -63,11 +63,7 @@ export default class StarWarsPage extends Component {
 
     render() {
 
-        const {...props} = this.props;
-
-        let current = this.props.currentTab;
-        let themeColor = this.props.dark;
-
+        //const {...props} = this.props;
         const data = this.state.data;
 
         return (
@@ -98,3 +94,16 @@ export default class StarWarsPage extends Component {
         );
     }
 }
+/*
+
+const mapStateToProps = (state) => ({
+    selectedTheme: state.themeState.selectedTheme
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(PeanutsPage);
+*/

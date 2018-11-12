@@ -8,19 +8,18 @@ import IconBb8 from "../components/Icons/IconBb8";
 import IconFett from "../components/Icons/IconFett";
 import styled from "styled-components";
 import axios from "axios";
-import dataApi from "../components/dataApi";
 
 const SCTabContent = styled.div`
     background-color: transparent;
     margin: 0 auto;
-`
+`;
 
 const SCTitle = styled.h4`
     line-height: 2em;
     margin: 0 0 2em 0;
     display: inline-block;
-    color: ${ props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor };
-`
+    color: ${ props => props.theme.colors.panelColor };
+`;
 
 export default class StarWarsPage extends Component {
     // not totally required for this class
@@ -30,22 +29,21 @@ export default class StarWarsPage extends Component {
         goMobile: PropTypes.bool,
         starwars: PropTypes.array,
         data: PropTypes.array
-    }
+    };
 
     static defaultProps = {
         currentTab: 1,
         width: window.innerWidth,
         goMobile: false,
         data: []
-    }
+    };
 
     state = {
         currentTab: this.props.currentTab || 1,
-        selectedTheme: "light",
+        //selectedTheme: "light",
         goMobile: this.props.goMobile,
-        //starwars: [],
         data: this.props.data
-    }
+    };
 
     componentDidMount () {
         axios.get('data.json')
@@ -65,10 +63,8 @@ export default class StarWarsPage extends Component {
 
     render() {
 
-        const {...props} = this.props;
-        let current = props.currentTab;
-        let themeColor = props.selectedTheme;
-
+        //const {...props} = this.props;
+        //let current = props.currentTab;
         const data = this.state.data;
 
         return (
@@ -97,3 +93,17 @@ export default class StarWarsPage extends Component {
         );
     }
 }
+
+/*
+
+const mapStateToProps = (state) => ({
+    selectedTheme: state.themeState.selectedTheme
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(StarWarsPage);
+*/

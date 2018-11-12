@@ -5,11 +5,17 @@
   "homepage": "https://chrismathers.github.io/react16-example-app/",
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "3.3.7",
     "gh-pages": "^2.0.1",
     "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
+    "react-redux": "5.0.7",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "styled-components": "^4.0.0-beta.10"
+    "recompose": "^0.30.0",
+    "redux": "4.0.0",
+    "redux-devtools-extension": "^2.13.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -17,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build",
-    "deploy":  "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,7 +35,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "chai": "^4.2.0",
     "react-app-rewire-styled-components": "^3.0.2",
-    "react-app-rewired": "^1.6.2"
+    "react-app-rewired": "^1.6.2",
+    "styled-components": "^4.0.0-beta.10"
   }
 }

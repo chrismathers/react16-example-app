@@ -1,10 +1,9 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-import theme from '../theme.js'
+import styled from 'styled-components'
 
 const SCTabItem = styled.li`
   background-color: ${props => (props.isCurrent 
-        ? props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor
+        ? props => props.theme.colors.panelColor
         : props.theme.colors.tabColor
     )};
   border-top-left-radius: ${props => props.theme.units.tabBorderRadius};
@@ -29,19 +28,17 @@ export default class Tab extends React.Component {
 
     render () {
         return (
-            <ThemeProvider theme={theme}>
-                <SCTabItem
-                    aria-controls={'panel-' + this.props.id}
-                    aria-selected='true'
-                    role='tab'
-                    isCurrent={this.props.isCurrent}
-                    dark={this.props.dark}
-                >
-                    <span onClick={this.handleClick}>
-                        {this.props.name}
-                    </span>
-                </SCTabItem>
-            </ThemeProvider>
+            <SCTabItem
+                aria-controls={'panel-' + this.props.id}
+                aria-selected='true'
+                role='tab'
+                isCurrent={this.props.isCurrent}
+                //dark={this.props.dark}
+            >
+                <span onClick={this.handleClick}>
+                    {this.props.name}
+                </span>
+            </SCTabItem>
         )
     }
 }
