@@ -6,20 +6,9 @@ import IconC3po from "../components/Icons/IconC3po";
 import IconVader from "../components/Icons/IconVader";
 import IconBb8 from "../components/Icons/IconBb8";
 import IconFett from "../components/Icons/IconFett";
-import styled from "styled-components";
 import axios from "axios";
-
-const SCTabContent = styled.div`
-    background-color: transparent;
-    margin: 0 auto;
-`;
-
-const SCTitle = styled.h4`
-    line-height: 2em;
-    margin: 0 0 2em 0;
-    display: inline-block;
-    color: ${props => props.theme.colors.panelColor};
-`;
+import SCTabContent from "../components/SCTabContent";
+import SCTitle from "../components/SCTitle";
 
 export default class PeanutsPage extends Component {
     // not totally required for this class
@@ -41,7 +30,6 @@ export default class PeanutsPage extends Component {
 
     state = {
         currentTab: this.props.currentTab || 1,
-        //selectedTheme: "light",
         data: this.props.data
     };
 
@@ -59,51 +47,32 @@ export default class PeanutsPage extends Component {
 
     changeTab = tab => {
         this.setState({ currentTab: tab.id })
-    }
+    };
 
     render() {
-
-        //const {...props} = this.props;
         const data = this.state.data;
-
         return (
             <div className='c_tabsSwitcher'>
-
                 <SCTitle>Peanuts</SCTitle>
-
                 <Tabs
                     currentTab={this.state.currentTab}
                     changeTab={this.changeTab}
                     data={data}
                 />
                 <SCTabContent>
-                    {!this.state.goMobile
-                        ? <Characters
-                            page={data}
-                            currentTab={this.state.currentTab}
-                        />
-                        : <span>
-                                <IconC3po />
-                                <IconVader />
-                                <IconBb8 />
-                                <IconFett />
-                            </span>}
+                {!this.state.goMobile
+                    ? <Characters
+                        page={data}
+                        currentTab={this.state.currentTab}
+                    />
+                    : <span>
+                        <IconC3po />
+                        <IconVader />
+                        <IconBb8 />
+                        <IconFett />
+                      </span>}
                 </SCTabContent>
-
             </div>
         );
     }
 }
-/*
-
-const mapStateToProps = (state) => ({
-    selectedTheme: state.themeState.selectedTheme
-});
-
-const mapDispatchToProps = () => ({});
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(PeanutsPage);
-*/
