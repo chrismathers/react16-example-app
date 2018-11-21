@@ -2,11 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import styled from "styled-components"
 
-import IconC3po from './Icons/IconC3po.js';
-import IconVader from './Icons/IconVader.js';
-import IconBb8 from './Icons/IconBb8.js';
-import IconFett from './Icons/IconFett.js';
-
 const SCPanel = styled.div`
     display: flex;
     flex-direction: row;
@@ -54,34 +49,12 @@ class Characters extends React.Component {
         starwarspage: '',
         peanutspage: ''
     };
-/*
-    componentDidMount () {
-        axios.get('data.json')
-            .then(res => {
-                this.setState({
-                    characters: res.data.starwars.characters
-                })
-            })
-            .catch(function (error) {
-                console.log("The Axios call returned this error: " + error)
-            })
-    }*/
 
    render () {
 
         const {...props} = this.props;
         let current = this.props.currentTab;
-        //let themeColor = this.props.dark;
-
         const page = props.page;
-        //console.log("character page ", page);
-
-        const characterIcon = (id) => ({
-           "1": <IconC3po />,
-           "2": <IconVader />,
-           "3": <IconBb8 />,
-           "4": <IconFett />
-        })[id]
 
         const characterDetails = page.map(function (character) {
              if (character.id === current) {
@@ -90,7 +63,7 @@ class Characters extends React.Component {
                         key={character.id}
                         //dark={themeColor}
                     >
-                        {characterIcon(character.id)}
+                        <img src={require("./Icons/" + character.icon)} alt={character.icon} />
                         <SCText className='m_tabpanel_text' key={character.id}>
                             <SCTitle>{character.name}</SCTitle>
                             <p>{character.description}</p>

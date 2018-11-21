@@ -62,12 +62,12 @@ const Left = styled.div`
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
-  padding: 40px auto;
 `;
 
 const Right = styled.div`
-  background-color: midnightblue;
+  background-color: dimgray;
   padding-top: 40px;
+  width: 100%;
 `;
 
 class App extends Component {

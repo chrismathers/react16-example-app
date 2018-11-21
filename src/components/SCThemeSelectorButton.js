@@ -13,6 +13,7 @@ import {compose} from "recompose";
 import connect from "react-redux/es/connect/connect";
 
 const SCToggleButtonGroup = styled(ToggleButtonGroup)`
+    padding-top: 25px;
     margin: 15px 15px 30px;
     display: flex;
     justify-content: center;

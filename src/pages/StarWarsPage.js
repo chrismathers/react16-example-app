@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types'
 import Tabs from "../components/Tabs";
 import Characters from "../components/Characters";
-import IconC3po from "../components/Icons/IconC3po";
-import IconVader from "../components/Icons/IconVader";
-import IconBb8 from "../components/Icons/IconBb8";
-import IconFett from "../components/Icons/IconFett";
 import axios from "axios";
 import SCTitle from "../components/SCTitle";
 import SCTabContent from "../components/SCTabContent";
@@ -29,7 +25,6 @@ export default class StarWarsPage extends Component {
 
     state = {
         currentTab: this.props.currentTab || 1,
-        goMobile: this.props.goMobile,
         data: this.props.data
     };
 
@@ -51,6 +46,7 @@ export default class StarWarsPage extends Component {
 
     render() {
         const data = this.state.data;
+
         return (
             <div className='c_tabsSwitcher'>
                 <SCTitle>Star Wars</SCTitle>
@@ -66,10 +62,10 @@ export default class StarWarsPage extends Component {
                         currentTab={this.state.currentTab}
                     />
                     : <span>
-                        <IconC3po />
+                        {/*<IconC3po />
                         <IconVader />
                         <IconBb8 />
-                        <IconFett />
+                        <IconFett />*/}
                       </span>}
                 </SCTabContent>
             </div>

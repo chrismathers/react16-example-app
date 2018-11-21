@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types'
 import Tabs from "../components/Tabs";
 import Characters from "../components/Characters";
-import IconC3po from "../components/Icons/IconC3po";
-import IconVader from "../components/Icons/IconVader";
-import IconBb8 from "../components/Icons/IconBb8";
-import IconFett from "../components/Icons/IconFett";
 import axios from "axios";
 import SCTabContent from "../components/SCTabContent";
 import SCTitle from "../components/SCTitle";
@@ -15,7 +11,6 @@ export default class PeanutsPage extends Component {
     static propTypes = {
         currentTab: PropTypes.number,
         width: PropTypes.number,
-        goMobile: PropTypes.bool,
         tabText: PropTypes.string,
         data: PropTypes.array
     };
@@ -23,7 +18,6 @@ export default class PeanutsPage extends Component {
     static defaultProps = {
         currentTab: 1,
         width: window.innerWidth,
-        goMobile: false,
         tabText: '',
         data: []
     };
@@ -66,10 +60,10 @@ export default class PeanutsPage extends Component {
                         currentTab={this.state.currentTab}
                     />
                     : <span>
-                        <IconC3po />
-                        <IconVader />
-                        <IconBb8 />
-                        <IconFett />
+                        {/*<IconCharlie />
+                        <IconFranklin />
+                        <IconLucy />
+                        <IconSnoopy />*/}
                       </span>}
                 </SCTabContent>
             </div>
