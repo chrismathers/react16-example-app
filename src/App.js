@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import StarWarsPage from "./pages/StarWarsPage";
+import PeanutsPage from "./pages/PeanutsPage";
 import './App.css';
 
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
-import theme from "./theme.js"
-
-import axios from 'axios'
-import PropTypes from 'prop-types'
-import IconC3po from './components/Icons/IconC3po.js'
-import IconVader from './components/Icons/IconVader.js'
-import IconBb8 from './components/Icons/IconBb8.js'
-import IconFett from './components/Icons/IconFett.js'
-import Characters from './components/Characters.js'
-import Tabs from './components/Tabs.js'
+import SCLeftNavigation from "./components/SCLeftNavigation";
+import * as routes from "./core/constants/routes";
+import {determineTheme, determineValue} from "./core/utils/themeUtils";
+import {connect} from "react-redux";
+import SLThemeSelectorButton from "./components/SCThemeSelectorButton";
 
 const GlobalStyle = createGlobalStyle`
     body {
-        margin: 20px;
+        margin: 0 auto;
         background-color: ${props => props.theme.colors.bodyBgColor};
         color: ${props => props.theme.colors.baseTextColor};
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -57,114 +54,66 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const SCTabContent = styled.div`
-    background-color: transparent;
-    margin: 0 auto;
-`
+const Left = styled.div`
+  background-color: ghostwhite;
+  max-width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+`;
 
-const SCTitle = styled.h4`
-    line-height: 2em;
-    margin: 0 0 2em 0;
-    display: inline-block;
-    color: ${ props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor };
-`
+const Right = styled.div`
+  background-color: dimgray;
+  padding-top: 40px;
+  width: 100%;
+`;
 
 class App extends Component {
-    // not totally required for this class
-    static propTypes = {
-        currentTab: PropTypes.number,
-        width: PropTypes.number,
-        goMobile: PropTypes.bool,
-        tabText: PropTypes.string,
-        characters: PropTypes.array
-    }
-
-    static defaultProps = {
-        currentTab: 1,
-        width: window.innerWidth,
-        goMobile: false,
-        tabText: '',
-        characters: []
-    }
-
-    state = {
-        currentTab: this.props.currentTab || 1
-    }
-
-    componentDidMount () {
-        axios.get('data.json')
-            .then(res => {
-                this.setState({
-                    characters: res.data
-                })
-            })
-            .catch(function (error) {
-                console.log("The Axios call returned this error: " + error)
-            })
-    }
-
-    changeTab = tab => {
-        this.setState({ currentTab: tab.id })
-    }
 
     render () {
+        const navItems = [
+            {id: 1, route: routes.STARWARS,   label: 'Star Wars'},
+            {id: 2, route: routes.PEANUTS,  label: 'Peanuts'}
+        ];
 
-        const items = this.state.characters;
+        const { selectedTheme } = this.props;
+        const theme = determineTheme(determineValue(selectedTheme));
 
         return (
             <ThemeProvider theme={theme}>
-                <React.Fragment>
-                    <GlobalStyle/>
-                    <div className='c_tabsSwitcher'>
-                        <Tabs
-                            currentTab={this.state.currentTab}
-                            changeTab={this.changeTab}
-                            data={items}
-                        />
-                        <SCTabContent>
-                            {!this.state.goMobile
-                                ? <Characters
-                                    data={items}
-                                    currentTab={this.state.currentTab}
-                                />
-                                : <span>
-                                    <IconC3po />
-                                    <IconVader />
-                                    <IconBb8 />
-                                    <IconFett />
-                                </span>}
-                        </SCTabContent>
-
-                        <SCTitle>Default Theme</SCTitle>
-
-                        <Tabs
-                            currentTab={this.state.currentTab}
-                            changeTab={this.changeTab}
-                            data={items}
-                            dark
-                        />
-                        <SCTabContent>
-                            {!this.state.goMobile
-                                ? <Characters
-                                    dark
-                                    data={items}
-                                    currentTab={this.state.currentTab}
-                                />
-                                : <span>
-                                    <IconC3po />
-                                    <IconVader />
-                                    <IconBb8 />
-                                    <IconFett />
-                                </span>}
-                        </SCTabContent>
-
-                        <SCTitle dark>Dark Theme</SCTitle>
-                    </div>
-                </React.Fragment>
+                <Router>
+                    <React.Fragment>
+                        <GlobalStyle/>
+                        <Left>
+                            <div>
+                                <SLThemeSelectorButton />
+                                <SCLeftNavigation stacked navItems={navItems} />
+                            </div>
+                            <Right>
+                                <Route exact path="/" component={StarWarsPage} />
+                                <Route path="/starwars" component={StarWarsPage} />
+                                <Route path="/peanuts" component={PeanutsPage} />
+                            </Right>
+                        </Left>
+                    </React.Fragment>
+                </Router>
             </ThemeProvider>
         )
     }
 }
 
 
-export default App;
+//export default App;
+
+const mapStateToProps = (state) => ({
+    selectedTheme: state.themeState.selectedTheme
+});
+
+const mapDispatchToProps = () => ({});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);

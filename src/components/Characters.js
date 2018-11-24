@@ -1,19 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from "styled-components"
-import theme from "../theme.js"
-
-import IconC3po from './Icons/IconC3po.js';
-import IconVader from './Icons/IconVader.js';
-import IconBb8 from './Icons/IconBb8.js';
-import IconFett from './Icons/IconFett.js';
+import styled from "styled-components"
 
 const SCPanel = styled.div`
     display: flex;
     flex-direction: row;
     padding: 14px;
     border-radius: ${props => props.theme.units.panelBorderRadius};
-    background-color: ${ props => props.dark ? props.theme.colors.panelColorDark : props.theme.colors.panelColor };
+    background-color: ${ props => props.theme.colors.panelColor };
+    
+    img {
+      max-height: 72px;
+    }
   
     @media only screen and (max-width: 500px) {
         font-size: 13px;
@@ -34,39 +32,43 @@ const SCTitle = styled.h3`
 `
 
 class Characters extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            // you must initilize info to null so the current condition will work
+            starwars: null,
+            peanuts: null,
+            characters: null
+        }
+    }
+
     // not totally required for this class
     static propTypes = {
-        data: PropTypes.array
-    }
+        starwars: PropTypes.array,
+        peanuts: PropTypes.array,
+        characters: PropTypes.array
+    };
 
     static defaultProps = {
-        data: []
-    }
-
-    state = {
-        data: this.props.data || []
-    }
+        starwarspage: '',
+        peanutspage: ''
+    };
 
    render () {
 
-        let current = this.props.currentTab;
-        let themeColor = this.props.dark;
+        const {...props} = this.props;
+        let current = props.currentTab;
+        const page = props.page;
 
-        const characterIcon = (id) => ({
-           "1": <IconC3po />,
-           "2": <IconVader />,
-           "3": <IconBb8 />,
-           "4": <IconFett />
-        })[id]
-
-        const characterDetails = this.props.data.map(function (character) {
+        const characterDetails = page.map(function (character) {
+            console.log("characgter.icon ", character.icon);
              if (character.id === current) {
                 return (
                     <SCPanel
                         key={character.id}
-                        dark={themeColor}
+                        //dark={themeColor}
                     >
-                        {characterIcon(character.id)}
+                        <img src={require("./Icons/" + character.icon)} alt={character.icon} />
                         <SCText className='m_tabpanel_text' key={character.id}>
                             <SCTitle>{character.name}</SCTitle>
                             <p>{character.description}</p>
@@ -74,15 +76,12 @@ class Characters extends React.Component {
                     </SCPanel>
                 )
             }
-        })
-
+        });
 
         return (
-            <ThemeProvider theme={theme}>
                 <React.Fragment>
-                    {characterDetails}
+                   {characterDetails}
                 </React.Fragment>
-            </ThemeProvider>
         )
     }
 }

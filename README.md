@@ -33,6 +33,18 @@ yarn add react-app-rewire-styled-components --dev
 ## Add axios
 yarn add axios
 
+## Add redux
+yarn add redux
+yarn add react-redux
+yarn add react-router-dom
+yarn add recompose
+
+yarn add react-boostrap
+
+
+## Add chai
+yarn add chai
+
 ## Available Scripts
 
 In the project directory, you can run:
