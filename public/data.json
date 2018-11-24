@@ -28,7 +28,7 @@
     ]
   },
   "peanuts": {
-    "characters":[
+    "characters": [
       {
         "id":1,
         "name":"Charlie",
@@ -39,19 +39,20 @@
         "id":2,
         "name":"Franklin",
         "description":"Franklin and Charlie Brown are always on good terms, Franklin is seen as a good friend to Charlie Brown and is arguably the nicest person to him in the strip. The two occasionally build sandcastles together on the beach, go to Charlie Brown's house and watch movies together.",
-        "Icon": "IconFranklin.png"
+        "icon": "IconFranklin.png"
       },
+
       {
         "id":3,
         "name":"Lucy",
         "description":"Charlie Brown has a slightly critical opinion of Lucy, as she is always doing mean things to Linus, or dropping fly balls. Charlie Brown also constantly falls for Lucy's \"football gag\".",
-        "Icon": "IconLucy.png"
+        "icon": "IconLucy.png"
       },
       {
         "id":4,
         "name":"Snoopy",
         "description":"Snoopy is Charlie Brown's dog, and they have a strange but strong relationship. Despite them not being from the same species, they are still close friends, although sometimes they are annoyed at each other.",
-        "Icon": "IconSnoopy.png"
+        "icon": "IconSnoopy.png"
       }
     ]
   }

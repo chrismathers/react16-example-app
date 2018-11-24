@@ -45,6 +45,7 @@ export default class PeanutsPage extends Component {
 
     render() {
         const data = this.state.data;
+        console.log("data ", data);
         return (
             <div className='c_tabsSwitcher'>
                 <SCTitle>Peanuts</SCTitle>

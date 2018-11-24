@@ -16,27 +16,28 @@ const SCTabItem = styled.li`
 
 export default class Tab extends React.Component {
     constructor (props) {
-        super(props)
+        super(props);
 
         this.handleClick = this.handleClick.bind(this)
     }
 
     handleClick (e) {
-        e.preventDefault()
-        this.props.handleClick()
+        e.preventDefault();
+        this.props.handleClick();
     }
 
     render () {
+        const {...props} = this.props;
         return (
             <SCTabItem
-                aria-controls={'panel-' + this.props.id}
+                aria-controls={'panel-' + props.id}
                 aria-selected='true'
                 role='tab'
-                isCurrent={this.props.isCurrent}
+                isCurrent={props.isCurrent}
                 //dark={this.props.dark}
             >
                 <span onClick={this.handleClick}>
-                    {this.props.name}
+                    {props.name}
                 </span>
             </SCTabItem>
         )

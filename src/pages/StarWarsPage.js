@@ -46,7 +46,7 @@ export default class StarWarsPage extends Component {
 
     render() {
         const data = this.state.data;
-
+        console.log("data ", data);
         return (
             <div className='c_tabsSwitcher'>
                 <SCTitle>Star Wars</SCTitle>

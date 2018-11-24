@@ -8,6 +8,10 @@ const SCPanel = styled.div`
     padding: 14px;
     border-radius: ${props => props.theme.units.panelBorderRadius};
     background-color: ${ props => props.theme.colors.panelColor };
+    
+    img {
+      max-height: 72px;
+    }
   
     @media only screen and (max-width: 500px) {
         font-size: 13px;
@@ -53,10 +57,11 @@ class Characters extends React.Component {
    render () {
 
         const {...props} = this.props;
-        let current = this.props.currentTab;
+        let current = props.currentTab;
         const page = props.page;
 
         const characterDetails = page.map(function (character) {
+            console.log("characgter.icon ", character.icon);
              if (character.id === current) {
                 return (
                     <SCPanel
