@@ -7,7 +7,7 @@
   "static/js/1.36db584a.chunk.js.map": "/react16-example-app/static/js/1.36db584a.chunk.js.map",
   "runtime~main.js": "/react16-example-app/static/js/runtime~main.c9ddc38c.js",
   "runtime~main.js.map": "/react16-example-app/static/js/runtime~main.c9ddc38c.js.map",
-  "static/media/bootstrap.css": "/react16-example-app/static/media/glyphicons-halflings-regular.fa277232.woff",
+  "static/media/bootstrap.css": "/react16-example-app/static/media/glyphicons-halflings-regular.e18bbf61.ttf",
   "static/media/IconBb8.svg": "/react16-example-app/static/media/IconBb8.7d8bda37.svg",
   "static/media/IconC3po.svg": "/react16-example-app/static/media/IconC3po.d782466f.svg",
   "static/media/IconCharlie.png": "/react16-example-app/static/media/IconCharlie.7e5f37c1.png",
@@ -19,6 +19,6 @@
   "static/css/main.4c8c2eeb.chunk.css.map": "/react16-example-app/static/css/main.4c8c2eeb.chunk.css.map",
   "static/css/1.f8ab8c7c.chunk.css.map": "/react16-example-app/static/css/1.f8ab8c7c.chunk.css.map",
   "index.html": "/react16-example-app/index.html",
-  "precache-manifest.aa4878a97a624edb8e38e301556acaf1.js": "/react16-example-app/precache-manifest.aa4878a97a624edb8e38e301556acaf1.js",
+  "precache-manifest.07c0075268e7d5e4cd215745039d8c82.js": "/react16-example-app/precache-manifest.07c0075268e7d5e4cd215745039d8c82.js",
   "service-worker.js": "/react16-example-app/service-worker.js"
 }
