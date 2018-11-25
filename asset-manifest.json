@@ -1,13 +1,13 @@
 {
   "main.css": "/react16-example-app/static/css/main.4c8c2eeb.chunk.css",
-  "main.js": "/react16-example-app/static/js/main.1a3ec44b.chunk.js",
-  "main.js.map": "/react16-example-app/static/js/main.1a3ec44b.chunk.js.map",
+  "main.js": "/react16-example-app/static/js/main.78e47c35.chunk.js",
+  "main.js.map": "/react16-example-app/static/js/main.78e47c35.chunk.js.map",
   "static/css/1.f8ab8c7c.chunk.css": "/react16-example-app/static/css/1.f8ab8c7c.chunk.css",
   "static/js/1.36db584a.chunk.js": "/react16-example-app/static/js/1.36db584a.chunk.js",
   "static/js/1.36db584a.chunk.js.map": "/react16-example-app/static/js/1.36db584a.chunk.js.map",
   "runtime~main.js": "/react16-example-app/static/js/runtime~main.c9ddc38c.js",
   "runtime~main.js.map": "/react16-example-app/static/js/runtime~main.c9ddc38c.js.map",
-  "static/media/bootstrap.css": "/react16-example-app/static/media/glyphicons-halflings-regular.448c34a5.woff2",
+  "static/media/bootstrap.css": "/react16-example-app/static/media/glyphicons-halflings-regular.e18bbf61.ttf",
   "static/media/IconBb8.svg": "/react16-example-app/static/media/IconBb8.7d8bda37.svg",
   "static/media/IconC3po.svg": "/react16-example-app/static/media/IconC3po.d782466f.svg",
   "static/media/IconCharlie.png": "/react16-example-app/static/media/IconCharlie.7e5f37c1.png",
@@ -19,6 +19,6 @@
   "static/css/main.4c8c2eeb.chunk.css.map": "/react16-example-app/static/css/main.4c8c2eeb.chunk.css.map",
   "static/css/1.f8ab8c7c.chunk.css.map": "/react16-example-app/static/css/1.f8ab8c7c.chunk.css.map",
   "index.html": "/react16-example-app/index.html",
-  "precache-manifest.2a95f38f8f064ca3d857c207fb1623ad.js": "/react16-example-app/precache-manifest.2a95f38f8f064ca3d857c207fb1623ad.js",
+  "precache-manifest.c6d3bf2fb46405e8061e8ba8d46285d0.js": "/react16-example-app/precache-manifest.c6d3bf2fb46405e8061e8ba8d46285d0.js",
   "service-worker.js": "/react16-example-app/service-worker.js"
 }
