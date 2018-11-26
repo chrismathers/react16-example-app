@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const SCTabList = styled.ul`
     display: flex;
     flex-direction: row;
-    margin: 0;
+    margin: 0 3px -1px 3px;
       
     @media only screen and (max-width: 500px) {
         font-size: 12px;

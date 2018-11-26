@@ -4,16 +4,20 @@ export default {
         colors: {
             bodyBgColor: '#5591d4',
             baseTextColor: '#000',
-            panelColor: "white",
-            tabColor: "gainsboro",
-            tabTextColor: "#1d6ab7",
-            tabSelectedTextColor: "black",
-            borderColor: '#b8b8b8',
+            panelColor: 'white',
+            panelBorderColor: 'darkgray',
+            tabColor: 'gainsboro',
+            tabTextColor: '#1d6ab7',
+            tabSelectedTextColor: 'black',
+            leftNavColor: 'blanchedalmond',
+            leftNavBorderColor: 'darkgray',
+            rightPanelColor: '#f2f2f2',
+            H4Color: 'black'
         },
 
         units: {
-            tabBorderRadius: "10px",
-            panelBorderRadius: "17px"
+            tabBorderRadius: '10px',
+            panelBorderRadius: '17px'
         }
     },
 
@@ -21,16 +25,20 @@ export default {
         colors: {
             bodyBgColor: '#5591d4',
             baseTextColor: '#000',
-            panelColor: "#fcff70",
-            tabColor: "gainsboro",
-            tabTextColor: "#1d6ab7",
-            tabSelectedTextColor: "black",
-            borderColor: '#b8b8b8',
+            panelColor: 'white',
+            panelBorderColor: 'transparent',
+            tabColor: 'gainsboro',
+            tabTextColor: '#1d6ab7',
+            tabSelectedTextColor: 'black',
+            leftNavColor: 'aliceblue',
+            leftNavBorderColor: 'lightskyblue',
+            rightPanelColor: 'black',
+            H4Color: 'white'
         },
 
         units: {
-            tabBorderRadius: "10px",
-            panelBorderRadius: "17px"
+            tabBorderRadius: '10px',
+            panelBorderRadius: '17px'
         }
     }
 };

@@ -5,7 +5,7 @@ const StyledH4 = styled.h4`
     line-height: 2em;
     margin: 0 0 2em 0;
     display: inline-block;
-    color: ${props => props.theme.colors.panelColor};
+    color: ${props => props.theme.colors.H4Color};
 `;
 
 export default class SCTitle extends Component {

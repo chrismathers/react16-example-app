@@ -6,11 +6,12 @@ const SCPanel = styled.div`
     display: flex;
     flex-direction: row;
     padding: 14px;
+    border: 1px solid ${props => props.theme.colors.panelBorderColor};
     border-radius: ${props => props.theme.units.panelBorderRadius};
-    background-color: ${ props => props.theme.colors.panelColor };
+    background-color: ${props => props.theme.colors.panelColor};
     
     img {
-      max-height: 72px;
+       max-height: 72px;
     }
   
     @media only screen and (max-width: 500px) {
@@ -35,7 +36,6 @@ class Characters extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // you must initilize info to null so the current condition will work
             starwars: null,
             peanuts: null,
             characters: null

@@ -10,6 +10,9 @@ import * as routes from "./core/constants/routes";
 import {determineTheme, determineValue} from "./core/utils/themeUtils";
 import {connect} from "react-redux";
 import SLThemeSelectorButton from "./components/SCThemeSelectorButton";
+import SCContainer from "./components/layout/SCContainer";
+import SCContent from "./components/layout/SCContent";
+import SCLeftNav from "./components/layout/SCLeftNav";
 
 const GlobalStyle = createGlobalStyle`
     body {
@@ -54,22 +57,6 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-const Left = styled.div`
-  background-color: ghostwhite;
-  max-width: 80%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 auto;
-`;
-
-const Right = styled.div`
-  background-color: dimgray;
-  padding-top: 40px;
-  width: 100%;
-`;
-
 class App extends Component {
 
     render () {
@@ -86,17 +73,17 @@ class App extends Component {
                 <Router>
                     <React.Fragment>
                         <GlobalStyle/>
-                        <Left>
-                            <div>
+                        <SCContainer>
+                            <SCLeftNav>
                                 <SLThemeSelectorButton />
                                 <SCLeftNavigation stacked navItems={navItems} />
-                            </div>
-                            <Right>
+                            </SCLeftNav>
+                            <SCContent>
                                 <Route exact path="/" component={StarWarsPage} />
                                 <Route path="/starwars" component={StarWarsPage} />
                                 <Route path="/peanuts" component={PeanutsPage} />
-                            </Right>
-                        </Left>
+                            </SCContent>
+                        </SCContainer>
                     </React.Fragment>
                 </Router>
             </ThemeProvider>
