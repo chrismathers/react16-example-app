@@ -4,7 +4,7 @@ import StarWarsPage from "./pages/StarWarsPage";
 import PeanutsPage from "./pages/PeanutsPage";
 import './App.css';
 
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
 import SCLeftNavigation from "./components/SCLeftNavigation";
 import * as routes from "./core/constants/routes";
 import {determineTheme, determineValue} from "./core/utils/themeUtils";
