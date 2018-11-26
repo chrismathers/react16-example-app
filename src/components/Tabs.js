@@ -48,7 +48,6 @@ export default class Tabs extends React.Component {
                                 handleClick={this.handleClick.bind(this, tab)}
                                 name={tab.name}
                                 isCurrent={props.currentTab === tab.id}
-                                dark={props.dark}
                             />
                         )
                     }.bind(this)

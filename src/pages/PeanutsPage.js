@@ -28,7 +28,7 @@ export default class PeanutsPage extends Component {
     };
 
     componentDidMount () {
-        axios.get('data.json')
+        axios.get('https://chrismathers.github.io/react16-example-app/data.json')
             .then(res => {
                 this.setState({
                     data: res.data.peanuts.characters
@@ -45,7 +45,6 @@ export default class PeanutsPage extends Component {
 
     render() {
         const data = this.state.data;
-        console.log("data ", data);
         return (
             <div className='c_tabsSwitcher'>
                 <SCTitle>Peanuts</SCTitle>

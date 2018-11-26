@@ -29,7 +29,7 @@ export default class StarWarsPage extends Component {
     };
 
     componentDidMount () {
-        axios.get('data.json')
+        axios.get('https://chrismathers.github.io/react16-example-app/data.json')
             .then(res => {
                 this.setState({
                     data: res.data.starwars.characters
@@ -46,7 +46,6 @@ export default class StarWarsPage extends Component {
 
     render() {
         const data = this.state.data;
-        console.log("data ", data);
         return (
             <div className='c_tabsSwitcher'>
                 <SCTitle>Star Wars</SCTitle>

@@ -60,13 +60,10 @@ class Characters extends React.Component {
         let current = props.currentTab;
         const page = props.page;
 
-        const characterDetails = page.map(function (character) {
-            console.log("characgter.icon ", character.icon);
-             if (character.id === current) {
-                return (
-                    <SCPanel
+        const characterDetails = page.map((character) => {
+            if (character.id === current) {
+                return <SCPanel
                         key={character.id}
-                        //dark={themeColor}
                     >
                         <img src={require("./Icons/" + character.icon)} alt={character.icon} />
                         <SCText className='m_tabpanel_text' key={character.id}>
@@ -74,7 +71,8 @@ class Characters extends React.Component {
                             <p>{character.description}</p>
                         </SCText>
                     </SCPanel>
-                )
+            } else {
+                return null;
             }
         });
 

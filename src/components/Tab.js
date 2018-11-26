@@ -34,7 +34,6 @@ export default class Tab extends React.Component {
                 aria-selected='true'
                 role='tab'
                 isCurrent={props.isCurrent}
-                //dark={this.props.dark}
             >
                 <span onClick={this.handleClick}>
                     {props.name}
