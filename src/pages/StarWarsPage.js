@@ -4,7 +4,7 @@ import Tabs from "../components/Tabs";
 import Characters from "../components/Characters";
 import axios from "axios";
 import SCTitle from "../components/SCTitle";
-import SCTabContent from "../components/SCTabContent";
+import SCTabContent from "../components/layout/SCTabContent";
 
 export default class StarWarsPage extends Component {
     // not totally required for this class

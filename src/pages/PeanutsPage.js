@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Tabs from "../components/Tabs";
 import Characters from "../components/Characters";
 import axios from "axios";
-import SCTabContent from "../components/SCTabContent";
+import SCTabContent from "../components/layout/SCTabContent";
 import SCTitle from "../components/SCTitle";
 
 export default class PeanutsPage extends Component {
